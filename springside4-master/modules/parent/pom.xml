@@ -2,11 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-	    <groupId>org.sonatype.oss</groupId>
-	    <artifactId>oss-parent</artifactId>
-	    <version>7</version>
-	</parent>
 	<groupId>io.springside</groupId>
 	<artifactId>springside-parent</artifactId>
 	<version>4.3.0-SNAPSHOT</version>
@@ -55,7 +50,7 @@
 
 		<!-- Plugin的属性 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 	</properties>
 
 	<prerequisites>
@@ -407,6 +402,7 @@
 
 			<!-- Monitor begin -->
 			<!-- javasimon -->
+			<!-- JavaSimon主要是用于performance测试的时候查看系统瓶颈，如果是想实现系统实时监控，推荐使用Yahoo Metrics -->
 			<dependency>
 				<groupId>org.javasimon</groupId>
 				<artifactId>javasimon-spring</artifactId>
@@ -432,6 +428,7 @@
 			</dependency>
 
 			<!-- JSON begin -->
+			<!-- Json解析工具Jackson，功能全面，提供多种模式的json解析方式，性能较高 -->
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
@@ -479,6 +476,7 @@
 			</dependency>
 
 			<!-- logback -->
+			<!-- slf4j+logback,无论从功能上还是从性能上都较之log4j有了很大的提升 -->
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
@@ -507,6 +505,7 @@
 			</dependency>
 
 			<!-- log4jdbc -->
+			<!-- log4jdbc是在jdbc层的一个日志框架，可以将占位符与参数全部合并在一起显示 -->
 			<dependency>
 				<groupId>com.googlecode.log4jdbc</groupId>
 				<artifactId>log4jdbc</artifactId>
@@ -544,6 +543,7 @@
 			</dependency>
 
 			<!-- google java library -->
+			<!-- Guava 中文是石榴的意思，该项目是 Google 的一个开源项目，包含许多 Google 核心的 Java 常用库 -->
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
@@ -561,7 +561,14 @@
 				<artifactId>joda-time-jsptags</artifactId>
 				<version>1.1.1</version>
 			</dependency>
+			<!-- Jackson为Guava提供了官方支持 -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.datatype</groupId>
+				<artifactId>jackson-datatype-guava</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
 			<!-- joda for jackson -->
+			<!-- Jackson为Joda Time提供了官方支持 -->
 			<dependency>
 				<groupId>com.fasterxml.jackson.datatype</groupId>
 				<artifactId>jackson-datatype-joda</artifactId>
