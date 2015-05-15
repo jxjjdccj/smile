@@ -6,7 +6,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *******************************************************************************/
-package ${package}.service.account;
+package ${package}.service;
 
 import static org.assertj.core.api.Assertions.*;
 
