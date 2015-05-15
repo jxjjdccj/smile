@@ -81,6 +81,14 @@
 	<!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 与  artifactId 即可 -->
 	<dependencyManagement>
 		<dependencies>
+			<!-- 包含spring框架包 -->
+			<dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+    			<version>1.1.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 			<!-- SPRINGSIDE MODULES begin -->
 			<dependency>
 				<groupId>io.springside</groupId>
@@ -809,7 +817,7 @@
 			<!-- TEST end -->
 		</dependencies>
 	</dependencyManagement>
-
+	
 	<!-- 插件配置 -->
 	<build>
 		<pluginManagement>
