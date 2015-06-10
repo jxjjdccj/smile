@@ -1,0 +1,251 @@
+.smileDialog *,
+.smileDialog *:after,
+.smileDialog *:before  { -moz-box-sizing: content-box !important; -webkit-box-sizing: content-box !important; box-sizing: content-box !important }
+
+.smileDialog {
+    width: 350px;
+    z-index: 1001;
+}
+
+.smileDialog,
+.smileDialog .smileDialog_Title,
+.smileDialog .smileDialog_Body,
+.smileDialog .smileDialog_Buttons a {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Tahoma, Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+.smileDialog .smileDialog_Title,
+.smileDialog .smileDialog_BodyOuter,
+.smileDialog .smileDialog_ButtonsOuter {
+    border-color: #13252F;
+    border-width: 7px;
+}
+
+.smileDialog .smileDialog_Title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F6F5F5;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background: #444444;
+    padding: 12px 15px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/*  set background color here and not on smileDialog_Body, or you'll eventually run into problems with rounded corners
+    when using smaller widths for border! */
+.smileDialog .smileDialog_BodyOuter {
+    background: #E7EDEF;
+}
+
+.smileDialog .smileDialog_Body {
+    color: #44484A;
+    padding: 20px;
+    border-top-color: #000;
+    border-bottom-color: #FFF;
+}
+
+.smileDialog .smileDialog_ButtonsOuter {
+    background: #E7EDEF;
+    padding: 10px 5px 10px 10px;
+}
+
+.smileDialog .smileDialog_Buttons:before,
+.smileDialog .smileDialog_Buttons:after     { content: "\0020"; display: block; height: 0; visibility: hidden; font-size: 0 }
+.smileDialog .smileDialog_Buttons:after     { clear: both }
+.smileDialog .smileDialog_Buttons           { *zoom: 1 } /* for IE only */
+
+.smileDialog .smileDialog_Buttons a {
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 1px 0px 2px #222;
+    padding: 10px 15px;
+}
+
+.smileDialog .smileDialog_Buttons a:hover {
+    background: #224467;
+    color: #FFF
+}
+
+.smileDialog a.smileDialog_Close {
+    position: absolute;
+    right: 6px;
+    top: 0px;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    font-size: 21px;
+    color: #666
+}
+
+.smileDialog a.smileDialog_Close:hover {
+}
+
+.smileDialog .smileDialog_Title a.smileDialog_Close {
+    color: #E7EDEF;
+}
+
+.smileDialog .smileDialog_Title a.smileDialog_Close:hover {
+}
+
+.smileDialogOverlay {
+    background: #666;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+}
+
+/* = YOU SHOULD NOT CHANGE ANYTHING FROM THIS POINT ON
+---------------------------------------------------------------------------------------------------------------------*/
+.smileDialog {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 13px;
+    background: white none repeat scroll 0 0;
+    border: 5px solid rgba(0, 0, 0, 0.41);
+    /*border-radius: 13px;*/
+    box-shadow: 0 1px 0 white inset;
+}
+
+.smileDialog .smileDialog_Title {
+/*  border-left-style: outset;
+    border-top-style: outset;
+    border-right-style: outset; */
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    background:#eb4f4e none repeat scroll 0 0;
+}
+
+.smileDialog .smileDialog_BodyOuter {
+/*     border-left-style: outset;
+    border-right-style: outset; */
+    background: none;
+}
+
+.smileDialog .smileDialog_NoTitle {
+    /* border-top-style: solid; */
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.smileDialog .smileDialog_NoButtons {
+    /* border-bottom-style: solid; */
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.smileDialog .smileDialog_Body {
+    border-top-width: 1px;
+/*    border-top-style: outset;*/
+    border-bottom-width: 2px;
+    border-bottom-style: groove;
+    overflow: auto;
+}
+
+.smileDialog .smileDialog_NoTitle .smileDialog_Body {
+    border-top: none;
+}
+
+.smileDialog .smileDialog_NoButtons .smileDialog_Body {
+    border-bottom: none;
+}
+
+.smileDialog .smileDialog_Icon {
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+    padding-left: 88px;
+    min-height: 48px;
+    _height: 85px;
+}
+
+.smileDialog .smileDialog_Confirmation  { background-image: url('confirmation.png') }
+.smileDialog .smileDialog_Error         { background-image: url('error.png') }
+.smileDialog .smileDialog_Information   { background-image: url('information.png') }
+.smileDialog .smileDialog_Question      { background-image: url('question.png') }
+.smileDialog .smileDialog_Warning       { background-image: url('warning.png') }
+
+.smileDialog .smileDialog_ButtonsOuter {
+/*    border-left-style: outset;
+    border-right-style: outset;
+    border-bottom-style: outset;*/
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    background: none;
+}
+.smileDialog .smileDialog_Buttons a:hover {
+    background: #c00 none repeat scroll 0 0;
+    color: #FFF
+
+}
+.smileDialog .smileDialog_Buttons a {
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    margin-right: 5px;
+    min-width: 60px;
+    float: right;
+    _width: 60px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    
+    /* taken from Twitter Bootstrap */
+    background-color: #EB4F4E;
+    *background-color: #EB4F4E;
+    background-image: -moz-linear-gradient(top, #EB4F4E, #EB4F4E);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EB4F4E), to(#EB4F4E));
+    background-image: -webkit-linear-gradient(top, #EB4F4E, #EB4F4E);
+    background-image: -o-linear-gradient(top, #EB4F4E, #EB4F4E);
+    background-image: linear-gradient(to bottom, #EB4F4E, #EB4F4E);
+    background-repeat: repeat-x;
+    border-color: #0044CC #0044CC #002A80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0088CC', endColorstr='#FF0044CC', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+
+    /*self*/
+  /*  background: #eb4f4e none repeat scroll 0 0;
+  border-radius: 3px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 5px 0;
+  text-align: center;
+  width: 80px; */
+}
+
+.smileDialog .smileDialog_Buttons_Centered .smileDialog_Buttons {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.smileDialog .smileDialog_Buttons_Centered a {
+    zoom: 1;
+    *display: inline;
+}
+
+.smileDialog .smileDialog_Preloader {
+    height: 32px;
+    background: url('preloader.gif') no-repeat center center;
+}
